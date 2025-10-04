@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>📊 Dashboard Overview</h1>
+
+<div class="stats">
+    <div class="stat-card">
+        <h3>🏢 Total Warehouses</h3>
+        <p style="font-size: 2.5rem; font-weight: bold; color: #667eea;">{{ warehouse_count }}</p>
+    </div>
+    <div class="stat-card">
+        <h3>🎨 Total Products</h3>
+        <p style="font-size: 2.5rem; font-weight: bold; color: #28a745;">{{ product_count }}</p>
+    </div>
+    <div class="stat-card">
+        <h3>📋 Active Orders</h3>
+        <p style="font-size: 2.5rem; font-weight: bold; color: #ffc107;">{{ active_order_count }}</p>
+    </div>
+    <div class="stat-card">
+        <h3>💰 Inventory Value</h3>
+        <p style="font-size: 2rem; font-weight: bold; color: #e83e8c;">${{ "%.2f"|format(total_value) }}</p>
+    </div>
+</div>
+
+<div class="grid-2" style="margin-top: 2rem;">
+    <div>
+        <h2>⚠️ Low Stock Alerts</h2>
+        {% if low_stock %}
+            {% for item in low_stock %}
+            <div class="card alert-low-stock">
+                <h4 style="color: #dc3545;">{{ item.product_name }}</h4>
+                <p style="color: #b0b0b0;">📍 Warehouse: {{ item.warehouse_name }}</p>
+                <p>📦 Current: <strong style="color: #dc3545;">{{ item.quantity }}</strong> | Minimum: {{ item.min_stock_level }}</p>
+                <div style="color: #dc3545; font-weight: bold; display: flex; align-items: center; gap: 0.5rem;">
+                    ⚠️ Low Stock Alert!
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="card" style="text-align: center;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">✅</div>
+                <p style="color: #28a745; font-weight: bold;">All stock levels are adequate</p>
+            </div>
+        {% endif %}
+    </div>
+
+    <div>
+        <h2>📈 Order Status Distribution</h2>
+        {% for stat in order_stats %}
+        <div class="card">
+            <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 0.5rem;">
+                <h4 style="margin: 0;">
+                    {% if stat.status == 'pending' %}⏳
+                    {% elif stat.status == 'processing' %}🔄
+                    {% elif stat.status == 'shipped' %}🚚
+                    {% else %}✅{% endif %}
+                    {{ stat.status|title }}
+                </h4>
+                <span style="font-weight: bold; color: #667eea;">{{ stat.count }}</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: {{ (stat.count / order_stats|sum(attribute='count') * 100) if order_stats|sum(attribute='count') > 0 else 0 }}%;"></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div style="margin-top: 2rem;">
+    <h2>📋 Recent Orders</h2>
+    {% if recent_orders %}
+    <table>
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Order Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in recent_orders %}
+            <tr>
+                <td><strong>#{{ order.id }}</strong></td>
+                <td>{{ order.customer_name }}</td>
+                <td>{{ order.product_name }}</td>
+                <td>{{ order.quantity }}</td>
+                <td style="color: #28a745; font-weight: bold;">${{ "%.2f"|format(order.total_price) }}</td>
+                <td>
+                    <span class="status-{{ order.status }}">
+                        {% if order.status == 'pending' %}⏳
+                        {% elif order.status == 'processing' %}🔄
+                        {% elif order.status == 'shipped' %}🚚
+                        {% else %}✅{% endif %}
+                        {{ order.status|title }}
+                    </span>
+                </td>
+                <td>{{ order.order_date.strftime('%Y-%m-%d') }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <div class="card" style="text-align: center;">
+        <p>No recent orders found.</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

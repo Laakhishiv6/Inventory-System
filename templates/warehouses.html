@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>🏢 Warehouse Management</h1>
+
+<div class="form-grid">
+    <div>
+        <div class="card">
+            <h2>Add New Warehouse</h2>
+            <form action="/add_warehouse" method="POST">
+                <div class="form-group">
+                    <label>Warehouse Name:</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Location:</label>
+                    <input type="text" name="location" required>
+                </div>
+                <div class="form-group">
+                    <label>Capacity:</label>
+                    <input type="number" name="capacity" required>
+                </div>
+                <button type="submit" class="btn">Add Warehouse</button>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <div class="card">
+            <h2>Warehouse List</h2>
+            {% if warehouses %}
+            <div class="mobile-table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Location</th>
+                            <th>Capacity</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for warehouse in warehouses %}
+                        <tr>
+                            <td>{{ warehouse.name }}</td>
+                            <td>{{ warehouse.location }}</td>
+                            <td>{{ warehouse.capacity }}</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="/delete_warehouse/{{ warehouse.id }}" 
+                                       class="btn btn-danger btn-sm" 
+                                       onclick="return confirm('Are you sure you want to delete this warehouse?')">
+                                        Delete
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <p>No warehouses found. Add your first warehouse!</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

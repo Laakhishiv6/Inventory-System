@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="text-align: center; padding: 2rem;">
+    <h1>Smart Inventory & Logistics Management System</h1>
+    <p style="color: #b0b0b0; font-size: 1.2rem; margin-bottom: 3rem;">Manage your inventory, track orders, and monitor logistics in one place</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 3rem 0;">
+        <div class="card" style="text-align: center; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">📊</div>
+            <h3>Dashboard</h3>
+            <p style="color: #b0b0b0;">View analytics and overview</p>
+            <a href="/dashboard" class="btn" style="display: inline-block; text-decoration: none; margin-top: 1rem;">Go to Dashboard</a>
+        </div>
+        
+        <div class="card" style="text-align: center; background: linear-gradient(135deg, rgba(40, 167, 69, 0.1) 0%, rgba(23, 162, 184, 0.1) 100%);">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🏢</div>
+            <h3>Warehouses</h3>
+            <p style="color: #b0b0b0;">Manage storage locations</p>
+            <a href="/warehouses" class="btn" style="display: inline-block; text-decoration: none; margin-top: 1rem;">Manage Warehouses</a>
+        </div>
+        
+        <div class="card" style="text-align: center; background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(253, 126, 20, 0.1) 100%);">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🎨</div>
+            <h3>Products</h3>
+            <p style="color: #b0b0b0;">Manage art products</p>
+            <a href="/products" class="btn" style="display: inline-block; text-decoration: none; margin-top: 1rem;">Manage Products</a>
+        </div>
+        
+        <div class="card" style="text-align: center; background: linear-gradient(135deg, rgba(0, 123, 255, 0.1) 0%, rgba(111, 66, 193, 0.1) 100%);">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">📦</div>
+            <h3>Inventory</h3>
+            <p style="color: #b0b0b0;">Track stock levels</p>
+            <a href="/inventory" class="btn" style="display: inline-block; text-decoration: none; margin-top: 1rem;">View Inventory</a>
+        </div>
+        
+        <div class="card" style="text-align: center; background: linear-gradient(135deg, rgba(220, 53, 69, 0.1) 0%, rgba(253, 126, 20, 0.1) 100%);">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">📋</div>
+            <h3>Orders</h3>
+            <p style="color: #b0b0b0;">Process and track orders</p>
+            <a href="/orders" class="btn" style="display: inline-block; text-decoration: none; margin-top: 1rem;">Manage Orders</a>
+        </div>
+    </div>
+    
+    <div class="card" style="margin-top: 2rem; background: rgba(255, 255, 255, 0.05);">
+        <h3 style="text-align: center;">🚀 Quick Stats</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+            <div class="stat-card">
+                <h4>Total Warehouses</h4>
+                <p style="font-size: 2.5rem; font-weight: bold; color: #667eea;">{{ warehouse_count }}</p>
+            </div>
+            <div class="stat-card">
+                <h4>Total Products</h4>
+                <p style="font-size: 2.5rem; font-weight: bold; color: #28a745;">{{ product_count }}</p>
+            </div>
+            <div class="stat-card">
+                <h4>Active Orders</h4>
+                <p style="font-size: 2.5rem; font-weight: bold; color: #ffc107;">{{ order_count }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
