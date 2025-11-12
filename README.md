@@ -1,181 +1,149 @@
 # 📦 Inventory & Logistics Management System
 
-This is a **web-based Inventory and Logistics Management System** built using **Flask (Python)**, **MySQL**, and **HTML/CSS/JavaScript**.  
-It helps users **manage warehouses, products, stock levels, customer orders, and shipments** — all in one place with a clean and modern interface.
+This is a **web-based Inventory and Logistics Management System** built with **Flask (Python)**, **MySQL**, and **HTML/CSS/JavaScript**.  
+It helps users **manage warehouses, products, inventory stock levels, customer orders, and shipments** in one place, with an easy-to-use and modern interface.
 
 ---
 
 ## 📘 Project Overview
 
-This system acts as a **digital warehouse and inventory manager**.  
-It allows users to:
-- Store and organize warehouse information  
-- Add and track products  
-- Manage stock levels and quantities  
-- Create and monitor customer orders  
-- View analytics and low-stock alerts on a dashboard  
-
-The system is designed for small or medium businesses that need an easy and efficient way to manage their inventory and logistics operations.
+This system acts as a **digital warehouse and inventory tracker** for small or medium businesses.  
+It helps automate the process of managing stock, tracking orders, and monitoring warehouse performance — saving time and reducing human error.
 
 ---
 
-## 📸 Project Walkthrough (Screenshots & Steps)
+## 🎯 Purpose of the Project
 
-Below is a step-by-step explanation of how the system works, along with what each page in the application does.
+The main goal of this project is to:
+- Provide an efficient and user-friendly system for managing inventory operations.  
+- Maintain accurate product and order records.  
+- Support real-time tracking of stock levels.  
+- Present a dashboard for analytics, alerts, and quick decision-making.
 
----
-
-### 🏠 1. Home Page – Main Navigation and Overview
-
-![Home Page](screenshots/home.png)
-
-This is the **main home page** of the system.  
-It serves as the starting point for users to navigate to different modules of the application.
-
-#### ✨ Features:
-- The navigation bar at the top gives quick access to all sections:  
-  **Home, Dashboard, Warehouses, Products, Inventory, and Orders.**
-- The page contains large, clickable cards for each section.  
-- Each card briefly describes what that section does (e.g., manage warehouses, view dashboard, manage products).
-
-💡 **Purpose:**  
-Provides an easy and user-friendly way for users to access different parts of the inventory system.
+It ensures that **products, warehouses, and orders** are all linked and synchronized properly in a single database.
 
 ---
 
-### 📊 2. Dashboard – Analytics and Key Insights
+## ⚙️ Key Features
 
-![Dashboard Page](screenshots/dashboard.png)
+### 🏠 1. Home Page – Main Navigation
+<img width="1891" height="923" alt="Screenshot 2025-11-12 173245" src="https://github.com/user-attachments/assets/4b4ae205-eba7-4740-b998-048ac2a2bfa4" />
 
-The **Dashboard** is the analytical hub of the system.  
-It gives a quick visual overview of business and stock information.
 
-#### ✨ Features:
-- **Low Stock Alerts:**  
-  Highlights products or warehouses that have fallen below the minimum stock level.  
-  Example: “Current: 7 | Minimum: 70 – Low Stock Alert!”
-- **Order Status Distribution:**  
-  Displays how many orders are pending or shipped.
-- **Recent Orders Table:**  
-  Lists the most recent customer orders with details like customer name, product, quantity, price, status, and date.
+- The **Home Page** gives users a clean starting point to navigate the system.  
+- Includes navigation buttons for **Dashboard, Warehouses, Products, Inventory, and Orders**.  
+- Each card briefly explains what that module does.
 
-💡 **Purpose:**  
-Gives a summary of the overall inventory health, order progress, and business activity.
+💡 **Purpose:** Easy navigation and quick access to different management modules.
 
 ---
 
-### 🏢 3. Warehouse Management – Manage Storage Locations
+### 📊 2. Dashboard – Insights and Analytics
+<img width="1878" height="922" alt="Screenshot 2025-11-12 173307" src="https://github.com/user-attachments/assets/72e5f262-0641-4634-92db-e0479134107b" />
 
-![Warehouse Management](screenshots/warehouse.png)
 
-This page handles **warehouse data management**.
+- Displays key business stats like:
+  - Total warehouses  
+  - Products in stock  
+  - Pending and shipped orders  
+  - Low stock alerts
+- Shows **recent orders** with product, quantity, price, and order date.
+- Displays stock health alerts for quick restocking decisions.
 
-#### ✨ Features:
-- **Add New Warehouse Form:**  
-  Allows users to add new warehouses with details like:
-  - Warehouse Name  
-  - Location  
-  - Storage Capacity  
-- **Warehouse List Table:**  
-  Displays all existing warehouses with their names, addresses, and capacities.
-- **Delete Button:**  
-  Allows users to remove outdated or duplicate warehouse records.
-
-💡 **Purpose:**  
-Helps the user maintain an updated list of storage facilities or branches.
+💡 **Purpose:** Gives an instant overview of inventory and order performance.
 
 ---
 
-### 🏷️ 4. Product Management – Manage Product Details
+### 🏢 3. Warehouse Management
+![Uploading Screenshot 2025-11-12 173317 - Copy.png…]()
 
-![Product Management](screenshots/products.png)
 
-This page helps users manage all the products in the system.
 
-#### ✨ Features:
-- **Add New Product Form:**  
-  Users can enter product details including:
-  - Product Name  
-  - Description  
-  - Category  
-  - Price  
-- **Product List Table:**  
-  Displays all products currently in the system with their categories and prices.
-- **Delete Button:**  
-  Removes unwanted or outdated products.
+- Users can **add, view, and delete warehouses**.  
+- Each warehouse record includes **name, location, and capacity**.  
+- Helps in organizing storage facilities efficiently.
 
-💡 **Purpose:**  
-Acts as a central place to maintain product information — what items exist in stock, along with their categories and prices.
+💡 **Purpose:** Keeps track of multiple storage locations in a structured way.
 
 ---
 
-### 📦 5. Inventory Management – Track Stock and Warehouse Quantities
+### 🏷️ 4. Product Management
+<img width="1879" height="911" alt="Screenshot 2025-11-12 173317" src="https://github.com/user-attachments/assets/9b768a63-42f7-417a-b500-be3a5159dadf" />
 
-![Inventory Management](screenshots/inventory.png)
 
-This page connects products to specific warehouses and tracks the number of items in each location.
+- Users can **add, view, and delete products**.  
+- Each product has a **name, description, category, and price**.  
+- The system displays a table of all existing products.
 
-#### ✨ Features:
-- **Add/Update Inventory Form:**  
-  Allows users to select a product, choose a warehouse, enter stock quantity, and set a minimum stock alert.
-- **Current Inventory Table:**  
-  Displays all existing stock entries with:
-  - Product name  
-  - Warehouse location  
-  - Current quantity  
-  - Minimum stock value  
-  - Total inventory value  
-- Includes “Update” and “Delete” buttons for easy management.
-
-💡 **Purpose:**  
-Makes it easy to see how much stock is available at each location and identifies low-stock items that need restocking.
+💡 **Purpose:** Maintains an updated list of products with complete details for better organization.
 
 ---
 
-### 🧾 6. Order Management – Create and Track Customer Orders
+### 📦 5. Inventory Management
+<img width="1890" height="914" alt="Screenshot 2025-11-12 173340" src="https://github.com/user-attachments/assets/5f3c534a-b545-4ad9-8711-a3903f60948e" />
 
-![Order Management](screenshots/orders.png)
 
-This page manages customer order data and helps track their processing status.
+- Links **products** with **warehouses** and tracks quantities.  
+- Allows users to set **minimum stock levels** for alerts.  
+- Displays total stock quantity and value in a detailed table.  
+- Includes **update** and **delete** options for each record.
 
-#### ✨ Features:
-- **Create New Order Form:**  
-  Lets users input:
+💡 **Purpose:** Real-time tracking of stock availability across different warehouses.
+
+---
+
+### 🧾 6. Order Management
+<img width="1864" height="911" alt="Screenshot 2025-11-12 173443" src="https://github.com/user-attachments/assets/556da2c8-9c86-4578-b57c-730f688f2bef" />
+
+
+- Allows users to **create, view, and manage customer orders**.  
+- Order form captures:
   - Customer Name  
   - Customer Email  
-  - Product Name  
-  - Quantity Ordered  
-- **Order List Table:**  
-  Shows all current and past orders with:
-  - Order ID  
-  - Customer Name  
-  - Product Name  
+  - Product Ordered  
   - Quantity  
-  - Total Amount  
-  - Status (Pending, Shipped, etc.)  
-  - Order Date  
-- Each order can be **deleted or updated** as needed.
+- Displays all orders in a table with details like order ID, total amount, date, and status (Pending/Shipped).
 
-💡 **Purpose:**  
-Helps businesses handle orders efficiently and monitor their delivery status.
+💡 **Purpose:** Simplifies order processing and tracking from creation to delivery.
 
 ---
 
-## 🔁 How the System Works Together
+## 🔁 System Workflow
 
-Here’s the simple flow of how the whole system operates:
+1. **Warehouses** are added first.  
+2. **Products** are created and stored.  
+3. **Inventory** links each product to a warehouse with stock quantity.  
+4. **Orders** are created by customers and tracked through the dashboard.  
+5. **Dashboard** displays live updates on stock, alerts, and order activity.
 
-1. **Warehouses** are added to store items.  
-2. **Products** are created and listed.  
-3. **Inventory** links products to specific warehouses and keeps count of each item.  
-4. **Orders** are created when customers make purchases.  
-5. The **Dashboard** updates automatically to show:
-   - Total products and warehouses  
-   - Pending or shipped orders  
-   - Low-stock warnings  
-   - Recent orders and financial summaries  
+💡 *This makes it a complete end-to-end management system for logistics operations.*
 
-💡 This flow ensures smooth tracking of inventory and orders from start to finish.
+---
+
+## 🧮 Database Management & Optimization
+
+The database is designed with **efficiency, reliability, and data integrity** in mind.  
+Key principles applied include:
+
+### ✅ **1. Database Normalization**
+- The database is **normalized up to 3rd Normal Form (3NF)**.  
+- This means:
+  - Each table has a **single purpose** (warehouses, products, inventory, orders).  
+  - Redundant data is eliminated.  
+  - Relationships are maintained using **foreign keys**.  
+- This structure improves data consistency and query performance.
+
+### 🔐 **2. Transaction Control (ACID Properties)**
+- All database operations follow **ACID (Atomicity, Consistency, Isolation, Durability)** principles.  
+- This ensures:
+  - **Atomicity:** Each transaction (like adding or deleting a product) is completed fully or not at all.  
+  - **Consistency:** Database remains valid before and after each operation.  
+  - **Isolation:** Multiple users can perform tasks without interfering with each other’s data.  
+  - **Durability:** Once data is committed, it remains safe even after a crash or restart.  
+
+💡 *Example:*  
+If a user creates a new order and updates inventory, both actions happen in a single transaction.  
+If one fails, the system rolls back — keeping data accurate.
 
 ---
 
@@ -187,56 +155,33 @@ Here’s the simple flow of how the whole system operates:
 | **Backend** | Flask (Python Framework) |
 | **Database** | MySQL |
 | **Data Visualization** | Plotly |
-| **IDE/Tools** | VS Code, Flask Server, Git/GitHub |
+| **Version Control** | Git / GitHub |
+| **Tools** | VS Code, Flask Development Server |
 
 ---
 
-## 🎨 UI Design Highlights
+## 🧠 Learning Outcomes
 
-- Simple and modern **dark-theme interface**  
-- Easy navigation with **top menu bar**  
-- Clear buttons and forms for user-friendly experience  
-- Data displayed in structured, readable tables  
-- Consistent color coding (purple for actions, red for delete)
-
----
-
-## 🧠 Key Learning Outcomes
-
-While building this project, I learned how to:
-- Build full-stack web applications using Flask and MySQL  
-- Create CRUD operations (Add, View, Update, Delete)  
-- Design responsive web interfaces with HTML/CSS  
-- Handle data dynamically between frontend and backend  
-- Manage databases effectively using SQLAlchemy or MySQL  
+Through this project, I learned how to:
+- Develop a full-stack web application with Flask and MySQL.  
+- Create CRUD (Create, Read, Update, Delete) functionalities.  
+- Design normalized database schemas and maintain relationships.  
+- Use ACID-compliant transaction handling for reliability.  
+- Build an interactive and responsive front-end using HTML/CSS/JS.  
+- Implement dashboards for real-time analytics and monitoring.
 
 ---
 
 ## 🚀 Future Enhancements
 
-In future versions, I plan to add:
-- User authentication (Admin and Staff roles)  
-- Export reports to PDF/Excel  
-- Integration with barcode scanners  
-- Email or SMS alerts for low stock  
-- Cloud database connectivity for multi-branch access  
+In the future, the system can be improved by adding:
+- User authentication and roles (Admin, Staff).  
+- Export reports to PDF or Excel.  
+- Email/SMS alerts for low stock or order status.  
+- Integration with barcode scanners.  
+- Cloud database and Docker deployment for scalability.
 
 ---
 
-## 👩‍💻 Author
 
-**[Your Name]**  
-📧 your.email@example.com  
-🌐 [LinkedIn Profile](https://www.linkedin.com/in/yourname)
-
-If you found this project helpful, please ⭐ star the repository to support!
-
----
-
-## 📝 License
-
-This project is released under the **MIT License**.  
-You can use, modify, and share it for personal or educational purposes.
-
----
 
