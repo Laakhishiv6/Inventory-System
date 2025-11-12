@@ -1,30 +1,30 @@
-# 🎨 Art Inventory & Logistics Management System
+# 🎨 Smart Inventory & Logistics Management System
 
 This is a **web-based inventory and logistics management system** built with **Python (Flask)**.  
-It helps manage an **art business** by keeping track of **warehouses, products, inventory, customer orders, and shipments** — all in one platform.
+It helps manage an **business** by keeping track of **warehouses, products, inventory, customer orders, and shipments** — all in one platform.
 
 ---
 
 ## 📘 Project Overview
 
-The **Art Inventory & Logistics Management System** is designed to make managing an art business easier and more organized.
+The **Smart Inventory & Logistics Management System** is designed to make managing an  business easier and more organized.
 
 It acts like a **digital warehouse manager**.  
 You can check where each product is stored, how much stock is available, what orders are pending, and how shipments are moving.
 
-This project was created to automate and simplify daily tasks in managing art collections, inventory, and logistics operations.
+This project was created to automate and simplify daily tasks in managing collections, inventory, and logistics operations.
 
 ---
 
 ## 🎯 Purpose of the Project
 
-The main goal is to help art businesses:
+The main goal is to help businesses:
 - Keep their **inventory organized**
 - Track **warehouse storage capacity**
 - Manage **customer orders and shipments**
 - Analyze **business performance and stock value**
 
-So, it’s basically a **complete art inventory management system** — useful for small galleries, online art shops, or logistics companies that handle art items.
+So, it’s basically a **complete inventory management system** — useful for small galleries, online shops, or logistics companies that handle items.
 
 ---
 
@@ -48,7 +48,7 @@ So, it’s basically a **complete art inventory management system** — useful f
 ---
 
 ### 🖼️ Product Management
-- Add, view, and delete art products.
+- Add, view, and delete products.
 - Each product includes:
   - Name  
   - Description  
