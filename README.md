@@ -55,8 +55,7 @@ It ensures that **products, warehouses, and orders** are all linked and synchron
 ---
 
 ### 🏢 3. Warehouse Management
-![Uploading Screenshot 2025-11-12 173317 - Copy.png…]()
-
+<img width="1879" height="911" alt="Screenshot 2025-11-12 173317 - Copy" src="https://github.com/user-attachments/assets/a4835ee8-943b-4ea3-a38c-db3eb2720f65" />
 
 
 - Users can **add, view, and delete warehouses**.  
